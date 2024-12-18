@@ -16,10 +16,10 @@ public class Main {
 
         menu.bienvenidaMenu();
 
-        while(true){
+        while (true) {
             String eleccionUsuario = menu.mostrarMenu();
 
-            if(eleccionUsuario.contains("salir")){
+            if (eleccionUsuario.contains("salir")) {
                 break;
             }
 
@@ -35,11 +35,11 @@ public class Main {
                 String json = convertidorJson.toJson(pelicula);
                 GuardarPelicula.GuardarPeliculaEnJson(json);
 
-            }catch (InterruptedException | IOException e){
+            } catch (InterruptedException | IOException e) {
                 System.out.println("No se ha podido comunicar correctamente con el servidor para obtener los datos. " +
                         "Intentelo mas tarde");
                 break;
-            }catch (FilmNoEncontradoExcepcion e){
+            } catch (FilmNoEncontradoExcepcion e) {
                 System.out.println(e.getMessage());
                 System.out.println("Intente con otro Numero de Film\n");
             }

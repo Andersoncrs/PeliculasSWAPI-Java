@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Menu {
     Scanner scanner = new Scanner(System.in);
 
-    public void bienvenidaMenu(){
+    public void bienvenidaMenu() {
         System.out.println("""
                 
                 ******************** Bienvenido a Peliculas SWAPI ********************
@@ -14,23 +14,20 @@ public class Menu {
                 """);
     }
 
-    public String mostrarMenu(){
-        do{
+    public String mostrarMenu() {
+        do {
             System.out.println("Ingresa el Numero de Film que deseas consultar. (Para Salir Escribe \"salir\").");
             String eleccionUsuario = scanner.nextLine().trim().toLowerCase();
-            if(validarEntradaUsuario(eleccionUsuario)){
+            if (validarEntradaUsuario(eleccionUsuario)) {
                 System.out.println("Ha ingresado una opcion invalida, intentelo de nuevo por favor");
                 continue;
             }
             return eleccionUsuario;
-        } while(true);
+        } while (true);
     }
 
-    public boolean validarEntradaUsuario(String EleccionUsuario){
+    public boolean validarEntradaUsuario(String EleccionUsuario) {
 
-        if(EleccionUsuario.matches("\\d+") || EleccionUsuario.contains("salir")){
-            return false;
-        }
-        return true;
+        return !EleccionUsuario.matches("\\d+") && !EleccionUsuario.contains("salir");
     }
 }

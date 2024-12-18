@@ -19,10 +19,11 @@ public class ConvertidorJson {
         this.json = json;
     }
 
-    public PeliculaSwapi  fromJsonToPeliculaSwapi(){
-        return  gson.fromJson(this.json, PeliculaSwapi.class);
+    public PeliculaSwapi fromJsonToPeliculaSwapi() {
+        return gson.fromJson(this.json, PeliculaSwapi.class);
     }
-    public String toJson(Pelicula pelicula){
+
+    public String toJson(Pelicula pelicula) {
         return gson.toJson(pelicula);
     }
 }
