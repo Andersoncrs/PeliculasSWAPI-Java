@@ -17,13 +17,13 @@ public class Menu {
 
     public String mostrarMenu(){
         do{
-            System.out.println("Ingresa el Numero de Episodio que deseas consultar. (Para Salir Escribe \"salir\").");
-            String EleccionUsuario = scanner.nextLine().trim().toLowerCase();
-            if(validarEntradaUsuario(EleccionUsuario)){
+            System.out.println("Ingresa el Numero de Film que deseas consultar. (Para Salir Escribe \"salir\").");
+            String eleccionUsuario = scanner.nextLine().trim().toLowerCase();
+            if(validarEntradaUsuario(eleccionUsuario)){
                 System.out.println("Ha ingresado una opcion invalida, intentelo de nuevo por favor");
                 continue;
             }
-            return EleccionUsuario;
+            return eleccionUsuario;
         } while(true);
     }
 
@@ -33,6 +33,5 @@ public class Menu {
             return false;
         }
         return true;
-
     }
 }
