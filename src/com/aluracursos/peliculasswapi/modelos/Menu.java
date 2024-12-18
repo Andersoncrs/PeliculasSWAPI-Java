@@ -11,7 +11,6 @@ public class Menu {
                 ******************** Bienvenido a Peliculas SWAPI ********************
                 **********************************************************************
                 Aqui podras encontrar detalles acerca de las peliculas de Star Wars.
-                
                 """);
     }
 

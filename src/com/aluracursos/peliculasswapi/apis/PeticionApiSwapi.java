@@ -1,5 +1,7 @@
 package com.aluracursos.peliculasswapi.apis;
 
+import com.aluracursos.peliculasswapi.Excepciones.FilmNoEncontradoExcepcion;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -15,7 +17,7 @@ public class PeticionApiSwapi {
         this.eleccionUsuario = eleccionUsuario;
     }
 
-    public String peticionPeliculaUsiario() throws IOException, InterruptedException {
+    public String peticionPeliculaUsiario() throws IOException, InterruptedException, FilmNoEncontradoExcepcion {
         String uriBase = URIAPI + eleccionUsuario + "/";
             HttpRequest httpRequest = HttpRequest.newBuilder()
                     .uri(URI.create(uriBase))
@@ -25,6 +27,9 @@ public class PeticionApiSwapi {
             HttpClient httpClient = HttpClient.newHttpClient();
 
             HttpResponse<String> httpResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+            if(httpResponse.statusCode() == 404){
+                throw new FilmNoEncontradoExcepcion("\nEl Film indicado no se encuentra");
+            }
             return httpResponse.body();
     }
 }
