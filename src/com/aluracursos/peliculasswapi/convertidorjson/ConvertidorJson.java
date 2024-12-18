@@ -6,14 +6,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class ConvertidorJson {
-    private String json;
+    private final String json;
 
     Gson gson = new GsonBuilder()
             .setPrettyPrinting()
             .create();
 
-    public ConvertidorJson() {
-    }
 
     public ConvertidorJson(String json) {
         this.json = json;
