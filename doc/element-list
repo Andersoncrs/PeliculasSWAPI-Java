@@ -1,0 +1,7 @@
+com.aluracursos.peliculasswapi.apis
+com.aluracursos.peliculasswapi.convertidorjson
+com.aluracursos.peliculasswapi.dtos
+com.aluracursos.peliculasswapi.Excepciones
+com.aluracursos.peliculasswapi.manejopeliculas
+com.aluracursos.peliculasswapi.modelos
+com.aluracursos.peliculasswapi.principal
