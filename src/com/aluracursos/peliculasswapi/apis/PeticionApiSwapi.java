@@ -8,8 +8,8 @@ import java.net.http.HttpResponse;
 
 public class PeticionApiSwapi {
 
-    String URIAPI =  "https://swapi.py4e.com/api/films/";
-    String eleccionUsuario;
+    private String URIAPI =  "https://swapi.py4e.com/api/films/";
+    private String eleccionUsuario;
 
     public PeticionApiSwapi(String eleccionUsuario) {
         this.eleccionUsuario = eleccionUsuario;

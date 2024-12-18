@@ -1,6 +1,8 @@
 package com.aluracursos.peliculasswapi.principal;
 
 import com.aluracursos.peliculasswapi.apis.PeticionApiSwapi;
+import com.aluracursos.peliculasswapi.convertidorjson.ConvertidorJson;
+import com.aluracursos.peliculasswapi.dtos.PeliculaSwapi;
 import com.aluracursos.peliculasswapi.modelos.Menu;
 
 import java.io.IOException;
@@ -21,7 +23,12 @@ public class Main {
             try {
                 PeticionApiSwapi peticionApiSwapi = new PeticionApiSwapi(eleccionUsuario);
                 String resultadoPeticionApi = peticionApiSwapi.peticionPeliculaUsiario();
+
                 System.out.println(resultadoPeticionApi);
+
+                ConvertidorJson convertidorJson = new ConvertidorJson(resultadoPeticionApi);
+                PeliculaSwapi peliculaSwapi = convertidorJson.fromJsonToPeliculaSwapi();
+                System.out.println(peliculaSwapi);
 
 
             }catch (IOException e){
